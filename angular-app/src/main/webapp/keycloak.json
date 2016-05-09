@@ -1,0 +1,9 @@
+{
+  "realm": "master",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkirB8OimXnyeSHY6ODQk/hqv3k/4FEsIpvJKfiZ+RrBd432NeuVPafIaeE7B2BbH0PO3kQYlrT/9Zou2mVFE1OG/uaNStnEZxkDQ1Tg+zEdQr4ExLvgFAOmoWal4jYlUynQXLJb+uRZjzrlPQKOxE+vM45txT2dhxGx8ZBJAI5ox13vWUeJBdQR4PAmqQfLdToG+1z10iA8qAj++KP+WoklGHWN2/0m1PVrG/XFBx4UXbXFhOFSSGP1SGBnflNILg/NT6yMjLAsCSy4mmoBjfVg5KvjEKKXl+qEuGky7ZdSxO5xkqtcWCOTBX64HSjj/ZUACWp6Xdp6u1K+uNt2slwIDAQAB",
+  "bearer-only": true,
+  "auth-server-url": "http://localhost:8580/auth",
+  "ssl-required": "external",
+  "resource": "angular-client",
+  "public-client": true
+}
