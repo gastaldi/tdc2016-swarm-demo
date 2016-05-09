@@ -20,14 +20,10 @@ angular.module('myapp',['ngRoute','ngResource'])
     };
   });
 
-var auth = {
-  loggedIn : false,
-  authz : new Keycloak('keycloak.json')
-}
+var keycloak = new Keycloak('keycloak.json');
 
 angular.element(document).ready(function() {
-  auth.authz.init({ onLoad: 'login-required' }).success(function () {
-    auth.loggedIn = true;
+  keycloak.init({ onLoad: 'login-required' }).success(function () {
     angular.bootstrap(document, ["myapp"]);
   }).error(function () {
     console.log("ERROR");
@@ -39,10 +35,10 @@ angular.module('myapp').factory('authInterceptor', function($q) {
   return {
     request: function (config) {
       var deferred = $q.defer();
-      if (auth.authz.token) {
-        auth.authz.updateToken(5).success(function() {
+      if (keycloak.token) {
+        keycloak.updateToken(5).success(function() {
           config.headers = config.headers || {};
-          config.headers.Authorization = 'Bearer ' + auth.authz.token;
+          config.headers.Authorization = 'Bearer ' + keycloak.token;
           deferred.resolve(config);
         }).error(function() {
           deferred.reject('Failed to refresh token');

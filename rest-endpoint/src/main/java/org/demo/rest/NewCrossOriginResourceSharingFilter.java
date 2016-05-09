@@ -1,11 +1,13 @@
 package org.demo.rest;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ext.Provider;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 
 @Provider
+@ApplicationScoped
 public class NewCrossOriginResourceSharingFilter
 		implements
 			ContainerResponseFilter {
